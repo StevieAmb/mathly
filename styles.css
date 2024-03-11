@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+
+aside {
+  width: 20%;
+  padding: 2rem;
+  background: lightblue;
+  height: 100vh;
+}
+
+main {
+  width: 60%;
+  text-align: center;
+}
