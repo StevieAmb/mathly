@@ -11,6 +11,14 @@ aside {
   height: 100vh;
 }
 
+button {
+  background-color: darkblue;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+}
+
 main {
   width: 60%;
   text-align: center;
