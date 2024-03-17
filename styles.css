@@ -23,8 +23,8 @@ button {
 .operations-section {
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  margin-top: 10rem;
+  gap: 21rem;
+  margin-top: 15rem;
 }
 
 .operations-section p {
