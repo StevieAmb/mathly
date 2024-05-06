@@ -20,11 +20,11 @@ const createPlayersProblems = () => { //The random should only happen once every
 }
 
 const show = (elements) => {
-  array.forEach(element => element.classList.remove('hidden'))
+  elements.forEach(element => element.classList.remove('hidden'))
 }
 
 const hide = (elements) => {
-  array.forEach(element => element.classList.add('hidden'))
+  elements.forEach(element => element.classList.add('hidden'))
 }
 
 
