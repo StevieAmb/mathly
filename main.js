@@ -8,6 +8,8 @@ let computerTopNumber = document.getElementById('computer-top-number');
 let computerBottomNumber = document.getElementById('computer-bottom-number');
 let computerOperationSection = document.getElementById('computer-operation-section')
 
+let startAddGame = document.getElementById('start-add-game')
+
 const randomize = () => {
   let randomNumber = Math.floor(Math.random()*100)
   console.log(randomNumber)
@@ -28,7 +30,7 @@ const startGame = () => {
 
 const displayMathProblems = () => {
   show([playerOperationSection, computerOperationSection])
-  hide([])
+  hide([startAddGame])
 }
 
 const show = (elements) => {
@@ -38,3 +40,5 @@ const show = (elements) => {
 const hide = (elements) => {
   elements.forEach(element => element.classList.add('hidden'))
 }
+
+startAddGame.addEventListener('click', startGame)
