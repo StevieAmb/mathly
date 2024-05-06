@@ -22,7 +22,13 @@ const createPlayersProblems = () => { //The random should only happen once every
 }
 
 const startGame = () => {
+  displayMathProblems()
+  createPlayersProblems()
+}
 
+const displayMathProblems = () => {
+  show([playerOperationSection, computerOperationSection])
+  hide([])
 }
 
 const show = (elements) => {
@@ -32,6 +38,3 @@ const show = (elements) => {
 const hide = (elements) => {
   elements.forEach(element => element.classList.add('hidden'))
 }
-
-
-createPlayersProblems()
