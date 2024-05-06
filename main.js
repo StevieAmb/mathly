@@ -12,11 +12,20 @@ const randomize = () => {
   return randomNumber
 }
 
-const createPlayersProblems = () => {
+const createPlayersProblems = () => { //The random should only happen once every game play.
   playerTopNumber.innerHTML = randomize()
   playerBottomNumber.innerHTML = randomize()
   computerTopNumber.innerHTML = randomize()
   computerBottomNumber.innerHTML = randomize()
 }
+
+const show = (elements) => {
+  array.forEach(element => element.classList.remove('hidden'))
+}
+
+const hide = (elements) => {
+  array.forEach(element => element.classList.add('hidden'))
+}
+
 
 createPlayersProblems()
