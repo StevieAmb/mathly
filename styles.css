@@ -4,11 +4,16 @@ body {
   margin: 0 auto;
 }
 
-aside {
+.aside-player, .aside-computer {
   width: 20%;
   padding: 2rem;
   background: lightblue;
   height: 100vh;
+  box-shadow: inset -.75em -1em 1em rgb(63, 63, 129);
+}
+
+.aside-computer {
+  box-shadow: inset .75em -1em 1em rgb(63, 63, 129);
 }
 
 button {
