@@ -18,15 +18,7 @@ const randomize = () => {
 }
 
 const createPlayersProblems = () => { //The random should only happen once every game play.
-  console.log(topNumbers)
-  topNumbers.forEach(number => {
-    number.innerHTML = ''
-    setTimeout(() => {number.innerHTML = randomize()}, 200)
-  })
-  bottomNumbers.forEach(number => {
-    number.innerHTML = ''
-    setTimeout(() => {number.innerHTML = randomize()}, 200)
-  })
+ 
 }
 
 const startGame = () => {
