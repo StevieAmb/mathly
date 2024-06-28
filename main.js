@@ -42,3 +42,11 @@ const hide = (elements) => {
 }
 
 startAddGame.addEventListener('click', startGame)
+
+//Pseudocode
+//So, I need for the math problems to be the same numbers, that section to have the same numbers,
+//however, I need the input fields, where the answers go and show to be different.
+//What I can do is, I can make the two parts of the sections have the same classname, 
+//And then I can grab that one classname, and then get the children of them,
+//Where I can ise those and then randomize those.
+//I can also use the same classname to make the cards.

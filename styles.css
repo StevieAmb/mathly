@@ -28,8 +28,14 @@ button {
 .operations-section {
   display: flex;
   justify-content: center;
-  gap: 21rem;
+  gap: 12rem;
   margin-top: 15rem;
+}
+
+.math-problem-card {
+  border: lightblue 1px solid;
+  padding: 9rem;
+  box-shadow: 5px 5px 5px lightblue;
 }
 
 .operations-section p {
