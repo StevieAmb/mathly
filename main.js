@@ -2,6 +2,8 @@
 let playerTopNumber = document.getElementById('player-top-number');
 let playerBottomNumber = document.getElementById('player-bottom-number');
 let playerOperationSection = document.getElementById('player-operation-section');
+let topNumbers = document.querySelectorAll('.top-numbers');
+let bottomNumbers = document.querySelectorAll('.bottom-numbers')
 
 //Computer Game Section
 let computerTopNumber = document.getElementById('computer-top-number');
@@ -12,15 +14,19 @@ let startAddGame = document.getElementById('start-add-game')
 
 const randomize = () => {
   let randomNumber = Math.floor(Math.random()*100)
-  console.log(randomNumber)
   return randomNumber
 }
 
 const createPlayersProblems = () => { //The random should only happen once every game play.
-  playerTopNumber.innerHTML = randomize()
-  playerBottomNumber.innerHTML = randomize()
-  computerTopNumber.innerHTML = randomize()
-  computerBottomNumber.innerHTML = randomize()
+  console.log(topNumbers)
+  topNumbers.forEach(number => {
+    number.innerHTML = ''
+    setTimeout(() => {number.innerHTML = randomize()}, 200)
+  })
+  bottomNumbers.forEach(number => {
+    number.innerHTML = ''
+    setTimeout(() => {number.innerHTML = randomize()}, 200)
+  })
 }
 
 const startGame = () => {
