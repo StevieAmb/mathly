@@ -12,15 +12,14 @@ let startAddGame = document.getElementById('start-add-game')
 
 const randomize = () => {
   let randomNumber = Math.floor(Math.random()*100)
-  console.log(randomNumber)
   return randomNumber
 }
 
 const createPlayersProblems = () => { //The random should only happen once every game play.
   playerTopNumber.innerHTML = randomize()
+  computerTopNumber.innerHTML = playerTopNumber.textContent
   playerBottomNumber.innerHTML = randomize()
-  computerTopNumber.innerHTML = randomize()
-  computerBottomNumber.innerHTML = randomize()
+  computerBottomNumber.innerHTML = playerBottomNumber.textContent
 }
 
 const startGame = () => {
@@ -42,3 +41,11 @@ const hide = (elements) => {
 }
 
 startAddGame.addEventListener('click', startGame)
+
+//Pseudocode
+//So, I need for the math problems to be the same numbers, that section to have the same numbers,
+//however, I need the input fields, where the answers go and show to be different.
+//What I can do is, I can make the two parts of the sections have the same classname, 
+//And then I can grab that one classname, and then get the children of them,
+//Where I can ise those and then randomize those.
+//I can also use the same classname to make the cards.
