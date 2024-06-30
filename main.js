@@ -2,8 +2,6 @@
 let playerTopNumber = document.getElementById('player-top-number');
 let playerBottomNumber = document.getElementById('player-bottom-number');
 let playerOperationSection = document.getElementById('player-operation-section');
-let topNumbers = document.querySelectorAll('.top-numbers');
-let bottomNumbers = document.querySelectorAll('.bottom-numbers')
 
 //Computer Game Section
 let computerTopNumber = document.getElementById('computer-top-number');
@@ -18,7 +16,10 @@ const randomize = () => {
 }
 
 const createPlayersProblems = () => { //The random should only happen once every game play.
- 
+  playerTopNumber.innerHTML = randomize()
+  computerTopNumber.innerHTML = playerTopNumber.textContent
+  playerBottomNumber.innerHTML = randomize()
+  computerBottomNumber.innerHTML = playerBottomNumber.textContent
 }
 
 const startGame = () => {
