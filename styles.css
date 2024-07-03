@@ -2,6 +2,7 @@ body {
   display: flex;
   width: 100%;
   margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .aside-player, .aside-computer {
@@ -28,7 +29,7 @@ button {
 .operations-section {
   display: flex;
   justify-content: center;
-  gap: 12rem;
+  gap: 5rem;
   margin-top: 15rem;
 }
 
@@ -41,7 +42,9 @@ button {
 .operations-section p {
   margin: 0;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 34px;
+  letter-spacing: .06rem;
+  color: rgb(98, 98, 226);
 }
 
 .operation-line {
