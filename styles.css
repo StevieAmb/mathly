@@ -46,10 +46,17 @@ button {
 }
 
 .game-player-section .user-response-block {
+  display: flex;
+  flex-direction: column;
   color: rgb(98, 98, 226);
   margin-top: 2rem;
   font-weight: bold;
   font-size: 20px;
+}
+
+.game-player-section .user-response-block input {
+  border: 2px solid rgb(98, 98, 226);
+  border-radius: 3px;
 }
 
 .operations-section p {
