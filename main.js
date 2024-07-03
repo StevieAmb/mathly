@@ -11,7 +11,7 @@ let computerOperationSection = document.getElementById('computer-operation-secti
 let startAddGame = document.getElementById('start-add-game')
 
 const randomize = () => {
-  let randomNumber = Math.floor(Math.random()*100)
+  let randomNumber = Math.floor(Math.random()*(100 || -100))
   return randomNumber
 }
 
