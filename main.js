@@ -19,9 +19,9 @@ const randomize = () => {
 }
 
 const startMathProblemRound = () => {
-  displayMathProblems()
+  viewMathProblems()
   createPlayersProblems()
-  setTimeout(() => {showCorrectAnswer()}, 10000)
+  setTimeout(() => {showAutomatedResponse()}, 10000)
 }
 
 const createPlayersProblems = () => { //The random should only happen once every game play.
@@ -31,18 +31,13 @@ const createPlayersProblems = () => { //The random should only happen once every
   computerBottomNumber.innerHTML = playerBottomNumber.textContent
 }
 
-const showCorrectAnswer = () => {
+const showAutomatedResponse = () => {
   const topNumbers = parseInt(computerTopNumber.textContent)
   const bottomNumbers = parseInt(computerBottomNumber.textContent)
   correctAnswerView.innerHTML = topNumbers + bottomNumbers
 }
 
-// const startGame = () => {
-//   displayMathProblems()
-//   createPlayersProblems()
-// }
-
-const displayMathProblems = () => {
+const viewMathProblems = () => {
   show([playerOperationSection, computerOperationSection])
   hide([startAddGame])
 }

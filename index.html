@@ -8,6 +8,7 @@
   <body>
     <aside class="aside-player">
       This is the player side
+      <p>Score: <span class="user-score"></span></p>
     </aside>
     <main>
       <header>
@@ -23,7 +24,7 @@
           <p class="operation-line">_______</p>
           <div class="user-response-block">
             <input type="number" id="userAnswer" name="tentacles" min="-1000" max="1000" />
-            <label for="userAnswer">Your Answer:</label>
+            <label for="userAnswer">Your Answer</label>
           </div>
         </div>
         <div class="game-computer-section math-problem-card hidden" id="computer-operation-section">
@@ -37,6 +38,7 @@
     <aside class="aside-computer">
       <h1>Mathew</h1>
       This is the computer side
+      <p>Score: <span class="computer-score"></span></p>
     </aside>
   </body>
   <script src="main.js"></script>
