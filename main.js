@@ -7,6 +7,7 @@ let playerOperationSection = document.getElementById('player-operation-section')
 let computerTopNumber = document.getElementById('computer-top-number');
 let computerBottomNumber = document.getElementById('computer-bottom-number');
 let computerOperationSection = document.getElementById('computer-operation-section')
+let correctAnswerView = document.getElementById('correctAnswer')
 
 let startAddGame = document.getElementById('start-add-game')
 
@@ -17,6 +18,12 @@ const randomize = () => {
   return randomNumber 
 }
 
+const startMathProblemRound = () => {
+  displayMathProblems()
+  createPlayersProblems()
+  setTimeout(() => {showCorrectAnswer()}, 10000)
+}
+
 const createPlayersProblems = () => { //The random should only happen once every game play.
   playerTopNumber.innerHTML = randomize()
   computerTopNumber.innerHTML = playerTopNumber.textContent
@@ -24,12 +31,16 @@ const createPlayersProblems = () => { //The random should only happen once every
   computerBottomNumber.innerHTML = playerBottomNumber.textContent
 }
 
-
-
-const startGame = () => {
-  displayMathProblems()
-  createPlayersProblems()
+const showCorrectAnswer = () => {
+  const topNumbers = parseInt(computerTopNumber.textContent)
+  const bottomNumbers = parseInt(computerBottomNumber.textContent)
+  correctAnswerView.innerHTML = topNumbers + bottomNumbers
 }
+
+// const startGame = () => {
+//   displayMathProblems()
+//   createPlayersProblems()
+// }
 
 const displayMathProblems = () => {
   show([playerOperationSection, computerOperationSection])
@@ -44,7 +55,7 @@ const hide = (elements) => {
   elements.forEach(element => element.classList.add('hidden'))
 }
 
-startAddGame.addEventListener('click', startGame)
+startAddGame.addEventListener('click', startMathProblemRound)
 
 //Pseudocode
 //So, I need for the math problems to be the same numbers, that section to have the same numbers,
