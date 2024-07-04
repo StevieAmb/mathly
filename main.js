@@ -10,6 +10,8 @@ let computerOperationSection = document.getElementById('computer-operation-secti
 
 let startAddGame = document.getElementById('start-add-game')
 
+
+
 const randomize = () => {
   let randomNumber = Math.floor(Math.random()*(100))
   return randomNumber 
@@ -21,6 +23,8 @@ const createPlayersProblems = () => { //The random should only happen once every
   playerBottomNumber.innerHTML = randomize()
   computerBottomNumber.innerHTML = playerBottomNumber.textContent
 }
+
+
 
 const startGame = () => {
   displayMathProblems()
