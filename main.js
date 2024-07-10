@@ -11,6 +11,7 @@ let correctAnswerView = document.getElementById('correctAnswer')
 
 //Dialogue
 let userMathProblemDialogue = document.getElementById('userMathProblemDialogue')
+let userScore = document.getElementById('userScore')
 
 //Input Fields
 let userAnswerInput = document.getElementById('userAnswer')
@@ -42,6 +43,7 @@ const checkUserAnswer = () => {
   let answer = getMathProblemAnswer()
   if(parseInt(userAnswerInput.value) === answer) {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
+    userScore.textContent++
   } else {
     userMathProblemDialogue.innerHTML = "Not quite, try again!"
   }
