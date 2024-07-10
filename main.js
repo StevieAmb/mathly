@@ -14,7 +14,7 @@ let userAnswerInput = document.getElementById('userAnswer')
 
 //Buttons
 let startAddGame = document.getElementById('start-add-game')
-let checkUserAnswer = document.getElementById('submitUserAnswer')
+let checkUserAnswerButton = document.getElementById('submitUserAnswer')
 
 
 const randomize = () => {
@@ -28,12 +28,25 @@ const startMathProblemRound = () => {
   setTimeout(() => {showAutomatedResponse()}, 10000)
 }
 
+const checkUserAnswer = () => {
+
+}
+
+const getMathProblemAnswer = () => {
+  const topNumbers = parseInt(computerTopNumber.textContent)
+  const bottomNumbers = parseInt(computerBottomNumber.textContent)
+  const correctAnswer = topNumbers + bottomNumbers
+}
+
 const createPlayersProblems = () => { //The random should only happen once every game play.
   playerTopNumber.innerHTML = randomize()
   computerTopNumber.innerHTML = playerTopNumber.textContent
   playerBottomNumber.innerHTML = randomize()
   computerBottomNumber.innerHTML = playerBottomNumber.textContent
 }
+
+//I want it to check the answer against the addition, and then I need to write "CORRECT, YOU GOT IT!"
+//At the bottom of the square, and then I need to then add the ++ to the score
 
 const showAutomatedResponse = () => {
   const topNumbers = parseInt(computerTopNumber.textContent)
@@ -55,11 +68,9 @@ const hide = (elements) => {
 }
 
 startAddGame.addEventListener('click', startMathProblemRound)
+checkUserAnswerButton.addEventListener('click')
 
-//Pseudocode
-//For this, I need to grab the response from the user input field,
-//I need to them compare it to the correct answer from the problems
-//Then I need to add the score to the score field
+
 
 //If the user answer is correct, the computer card flips, and it says you got the correct answer
 //I need to think of something that stops the game, or removes the input field, and replaces it
