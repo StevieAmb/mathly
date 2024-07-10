@@ -9,8 +9,12 @@ let computerBottomNumber = document.getElementById('computer-bottom-number');
 let computerOperationSection = document.getElementById('computer-operation-section')
 let correctAnswerView = document.getElementById('correctAnswer')
 
-let startAddGame = document.getElementById('start-add-game')
+//Input Fields
+let userAnswerInput = document.getElementById('userAnswer')
 
+//Buttons
+let startAddGame = document.getElementById('start-add-game')
+let checkUserAnswer = document.getElementById('submitUserAnswer')
 
 
 const randomize = () => {
