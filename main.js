@@ -42,7 +42,10 @@ const checkUserAnswer = () => {
   let answer = getMathProblemAnswer()
   if(parseInt(userAnswerInput.value) === answer) {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
+  } else {
+    userMathProblemDialogue.innerHTML = "Not quite, try again!"
   }
+  userAnswerInput.value = ''
 }
 
 const createPlayersProblems = () => { //The random should only happen once every game play.
