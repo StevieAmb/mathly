@@ -20,10 +20,17 @@ let userAnswerInput = document.getElementById('userAnswer')
 let startAddGame = document.getElementById('start-add-game')
 let checkUserAnswerButton = document.getElementById('submitUserAnswer')
 
+const integerSigns = [1, -1]
 
-const randomize = () => {
+
+const randomizeNumber = () => {
   let randomNumber = Math.floor(Math.random()*(100))
   return randomNumber 
+}
+
+const randomizeNumberSigns = (signs) => {
+  let randomNumber = Math.floor(Math.random()*signs.length)
+  return randomNumber
 }
 
 const startMathProblemRound = () => {
@@ -51,9 +58,9 @@ const checkUserAnswer = () => {
 }
 
 const createPlayersProblems = () => { //The random should only happen once every game play.
-  playerTopNumber.innerHTML = randomize()
+  playerTopNumber.innerHTML = randomizeNumber() * integerSigns[randomizeNumberSigns(integerSigns)]
   computerTopNumber.innerHTML = playerTopNumber.textContent
-  playerBottomNumber.innerHTML = randomize()
+  playerBottomNumber.innerHTML = randomizeNumber() * integerSigns[randomizeNumberSigns(integerSigns)]
   computerBottomNumber.innerHTML = playerBottomNumber.textContent
 }
 
