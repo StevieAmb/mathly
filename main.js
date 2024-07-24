@@ -20,10 +20,16 @@ let userAnswerInput = document.getElementById('userAnswer')
 let startAddGame = document.getElementById('start-add-game')
 let checkUserAnswerButton = document.getElementById('submitUserAnswer')
 
+const integerSigns = [1, -1]
 
-const randomize = () => {
+
+const randomizeNumber = () => {
   let randomNumber = Math.floor(Math.random()*(100))
   return randomNumber 
+}
+
+const randomizeNumberSigns = () => {
+  
 }
 
 const startMathProblemRound = () => {
