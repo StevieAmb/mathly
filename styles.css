@@ -44,9 +44,6 @@ button {
   padding: 8rem;
   box-shadow: 5px 5px 5px lightblue;
 }
-.user-dialogue {
-  font-size: .3rem;
-}
 
 .game-player-section .user-response-block {
   display: flex;
@@ -68,7 +65,7 @@ button {
 .operations-section p {
   margin: 0;
   font-weight: bold;
-  font-size: 34px;
+  font-size: 20px;
   letter-spacing: .06rem;
   color: rgb(98, 98, 226);
 }
