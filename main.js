@@ -51,6 +51,8 @@ const checkUserAnswer = () => {
   if(parseInt(userAnswerInput.value) === answer) {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
     userScore.textContent++
+    hide([checkUserAnswerButton, userAnswerInput])
+
   } else {
     userMathProblemDialogue.innerHTML = "Not quite, try again!"
   }
@@ -63,10 +65,6 @@ const createPlayersProblems = () => { //The random should only happen once every
   playerBottomNumber.innerHTML = randomizeNumber() * integerSigns[randomizeNumberSigns(integerSigns)]
   computerBottomNumber.innerHTML = playerBottomNumber.textContent
 }
-
-//I want it to check the answer against the addition, and then I need to write "CORRECT, YOU GOT IT!"
-//At the bottom of the square, and then I need to then add the ++ to the score
-//I also need to account for when the user gets the answer wrong.
 
 const showAutomatedResponse = () => {
   const topNumbers = parseInt(computerTopNumber.textContent)
