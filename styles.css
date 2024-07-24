@@ -36,13 +36,16 @@ button {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  margin-top: 15rem;
+  margin-top: 10rem;
 }
 
 .math-problem-card {
   border: lightblue 1px solid;
   padding: 8rem;
   box-shadow: 5px 5px 5px lightblue;
+}
+.user-dialogue {
+  font-size: .3rem;
 }
 
 .game-player-section .user-response-block {
@@ -72,6 +75,15 @@ button {
 
 .operation-line {
   margin: 0;
+}
+
+.submit-user-answer {
+  background-color: darkblue;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: .5rem 2rem;
+  margin-top: 1rem;
 }
 
 .hidden {
