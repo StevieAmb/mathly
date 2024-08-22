@@ -14,7 +14,7 @@ let userMathProblemDialogue = document.getElementById('userMathProblemDialogue')
 let userScore = document.getElementById('userScore')
 
 //Input Fields
-let userAnswerInput = document.getElementById('userAnswer')
+let userAnswerInput = document.getElementById('userAnswerInput')
 
 //Buttons
 let startAddGame = document.getElementById('start-add-game')
@@ -31,6 +31,12 @@ const randomizeNumber = () => {
 const randomizeNumberSigns = (signs) => {
   let randomNumber = Math.floor(Math.random()*signs.length)
   return randomNumber
+}
+
+const showAutomatedResponse = () => {
+  const topNumbers = parseInt(computerTopNumber.textContent)
+  const bottomNumbers = parseInt(computerBottomNumber.textContent)
+  correctAnswerView.innerHTML = topNumbers + bottomNumbers
 }
 
 const startMathProblemRound = () => {
@@ -52,7 +58,7 @@ const checkUserAnswer = () => {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
     userScore.textContent++
     hide([checkUserAnswerButton, userAnswerInput])
-
+    startMathProblemRound()
   } else {
     userMathProblemDialogue.innerHTML = "Not quite, try again!"
   }
@@ -64,12 +70,6 @@ const createPlayersProblems = () => { //The random should only happen once every
   computerTopNumber.innerHTML = playerTopNumber.textContent
   playerBottomNumber.innerHTML = randomizeNumber() * integerSigns[randomizeNumberSigns(integerSigns)]
   computerBottomNumber.innerHTML = playerBottomNumber.textContent
-}
-
-const showAutomatedResponse = () => {
-  const topNumbers = parseInt(computerTopNumber.textContent)
-  const bottomNumbers = parseInt(computerBottomNumber.textContent)
-  correctAnswerView.innerHTML = topNumbers + bottomNumbers
 }
 
 const viewMathProblems = () => {
