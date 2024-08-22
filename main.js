@@ -12,9 +12,10 @@ let correctAnswerView = document.getElementById('correctAnswer')
 //Dialogue
 let userMathProblemDialogue = document.getElementById('userMathProblemDialogue')
 let userScore = document.getElementById('userScore')
+let userResponse = document.getElementById('userResponse')
 
 //Input Fields
-let userAnswerInput = document.getElementById('userAnswer')
+let userAnswerInput = document.getElementById('userAnswerInput')
 
 //Buttons
 let startAddGame = document.getElementById('start-add-game')
@@ -33,10 +34,16 @@ const randomizeNumberSigns = (signs) => {
   return randomNumber
 }
 
-const startMathProblemRound = () => {
+const showAutomatedResponse = () => {
+  const topNumbers = parseInt(computerTopNumber.textContent)
+  const bottomNumbers = parseInt(computerBottomNumber.textContent)
+  correctAnswerView.innerHTML = topNumbers + bottomNumbers
+}
+
+const startMathProblemRound = (answerCorrect) => {
   viewMathProblems()
   createPlayersProblems()
-  setTimeout(() => {showAutomatedResponse()}, 10000)
+  
 }
 
 const getMathProblemAnswer = () => {
@@ -46,14 +53,22 @@ const getMathProblemAnswer = () => {
   return correctAnswer;
 }
 
+//The native setTimeout function returns an ID when called that you can use to clear it.
+//In order to clear the setTimeout when the user gets the answer right, I need the ID,
+//Which I will use to clear the timeOut. Right now, it's in the start math problem round, which means it
+//is in the scope of that function. 
+
+
 const checkUserAnswer = () => {
   let answer = getMathProblemAnswer()
   if(parseInt(userAnswerInput.value) === answer) {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
     userScore.textContent++
+    userResponse.textContent = userAnswerInput.value;
+    startMathProblemRound(true)
     hide([checkUserAnswerButton, userAnswerInput])
-
   } else {
+    userResponse.textContent = userAnswerInput.value;
     userMathProblemDialogue.innerHTML = "Not quite, try again!"
   }
   userAnswerInput.value = ''
@@ -64,12 +79,6 @@ const createPlayersProblems = () => { //The random should only happen once every
   computerTopNumber.innerHTML = playerTopNumber.textContent
   playerBottomNumber.innerHTML = randomizeNumber() * integerSigns[randomizeNumberSigns(integerSigns)]
   computerBottomNumber.innerHTML = playerBottomNumber.textContent
-}
-
-const showAutomatedResponse = () => {
-  const topNumbers = parseInt(computerTopNumber.textContent)
-  const bottomNumbers = parseInt(computerBottomNumber.textContent)
-  correctAnswerView.innerHTML = topNumbers + bottomNumbers
 }
 
 const viewMathProblems = () => {
