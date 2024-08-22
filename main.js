@@ -43,10 +43,7 @@ const showAutomatedResponse = () => {
 const startMathProblemRound = (answerCorrect) => {
   viewMathProblems()
   createPlayersProblems()
-  if(answerCorrect) {
-    const timeOutId = setTimeout(() => {showAutomatedResponse()}, 10000)
-    clearTimeout(timeOutId)
-  }
+  
 }
 
 const getMathProblemAnswer = () => {
