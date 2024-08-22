@@ -40,10 +40,13 @@ const showAutomatedResponse = () => {
   correctAnswerView.innerHTML = topNumbers + bottomNumbers
 }
 
-const startMathProblemRound = () => {
+const startMathProblemRound = (answerCorrect) => {
   viewMathProblems()
   createPlayersProblems()
-  setTimeout(() => {showAutomatedResponse()}, 10000)
+  if(answerCorrect) {
+    const timeOutId = setTimeout(() => {showAutomatedResponse()}, 10000)
+    clearTimeout(timeOutId)
+  }
 }
 
 const getMathProblemAnswer = () => {
@@ -53,12 +56,19 @@ const getMathProblemAnswer = () => {
   return correctAnswer;
 }
 
+//The native setTimeout function returns an ID when called that you can use to clear it.
+//In order to clear the setTimeout when the user gets the answer right, I need the ID,
+//Which I will use to clear the timeOut. Right now, it's in the start math problem round, which means it
+//is in the scope of that function. 
+
+
 const checkUserAnswer = () => {
   let answer = getMathProblemAnswer()
   if(parseInt(userAnswerInput.value) === answer) {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
     userScore.textContent++
     userResponse.textContent = userAnswerInput.value;
+    startMathProblemRound(true)
     hide([checkUserAnswerButton, userAnswerInput])
   } else {
     userResponse.textContent = userAnswerInput.value;
