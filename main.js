@@ -12,6 +12,7 @@ let correctAnswerView = document.getElementById('correctAnswer')
 //Dialogue
 let userMathProblemDialogue = document.getElementById('userMathProblemDialogue')
 let userScore = document.getElementById('userScore')
+let userResponse = document.getElementById('userResponse')
 
 //Input Fields
 let userAnswerInput = document.getElementById('userAnswerInput')
@@ -57,9 +58,10 @@ const checkUserAnswer = () => {
   if(parseInt(userAnswerInput.value) === answer) {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
     userScore.textContent++
+    userResponse.textContent = userAnswerInput.value;
     hide([checkUserAnswerButton, userAnswerInput])
-    startMathProblemRound()
   } else {
+    userResponse.textContent = userAnswerInput.value;
     userMathProblemDialogue.innerHTML = "Not quite, try again!"
   }
   userAnswerInput.value = ''
