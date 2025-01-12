@@ -65,6 +65,8 @@ const restartGame = () => {
 
 
 const checkUserAnswer = () => {
+  show([userMathProblemDialogue, userResponse])
+  hide([userAnswerInput, checkUserAnswerButton])
   let answer = getMathProblemAnswer()
   if(parseInt(userAnswerInput.value) === answer) {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
