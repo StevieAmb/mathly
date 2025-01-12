@@ -70,13 +70,13 @@ const checkUserAnswer = () => {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
     userScore.textContent++
     userResponse.textContent = userAnswerInput.value;
-    setTimeout(() => restartGame(true), 2000)
     hide([checkUserAnswerButton, userAnswerInput])
   } else {
     userResponse.textContent = userAnswerInput.value;
     userMathProblemDialogue.innerHTML = "Not quite, try again!"
   }
   userAnswerInput.value = ''
+  setTimeout(() => restartGame(true), 2000)
 }
 
 const createPlayersProblems = () => { //The random should only happen once every game play.
