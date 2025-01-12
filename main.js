@@ -65,7 +65,7 @@ const checkUserAnswer = () => {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
     userScore.textContent++
     userResponse.textContent = userAnswerInput.value;
-    startMathProblemRound(true)
+    setTimeout(() => startMathProblemRound(true), 2000)
     hide([checkUserAnswerButton, userAnswerInput])
   } else {
     userResponse.textContent = userAnswerInput.value;
