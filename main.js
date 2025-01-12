@@ -59,7 +59,8 @@ const getMathProblemAnswer = () => {
 
 const restartGame = () => {
   startMathProblemRound()
-  show([userAnswerInput, userMathProblemDialogue])
+  show([userAnswerInput])
+  hide([userMathProblemDialogue, userResponse])
 }
 
 
