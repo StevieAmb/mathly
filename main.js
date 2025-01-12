@@ -43,7 +43,6 @@ const showAutomatedResponse = () => {
 const startMathProblemRound = (answerCorrect) => {
   viewMathProblems()
   createPlayersProblems()
-  
 }
 
 const getMathProblemAnswer = () => {
@@ -58,6 +57,11 @@ const getMathProblemAnswer = () => {
 //Which I will use to clear the timeOut. Right now, it's in the start math problem round, which means it
 //is in the scope of that function. 
 
+const restartGame = () => {
+  startMathProblemRound()
+  show([userAnswerInput, userMathProblemDialogue])
+}
+
 
 const checkUserAnswer = () => {
   let answer = getMathProblemAnswer()
@@ -65,7 +69,7 @@ const checkUserAnswer = () => {
     userMathProblemDialogue.innerHTML = "CORRECT, YOU GOT IT!"
     userScore.textContent++
     userResponse.textContent = userAnswerInput.value;
-    setTimeout(() => startMathProblemRound(true), 2000)
+    setTimeout(() => restartGame(true), 2000)
     hide([checkUserAnswerButton, userAnswerInput])
   } else {
     userResponse.textContent = userAnswerInput.value;
