@@ -7,20 +7,15 @@ body {
 }
 
 main {
-  width: 60%;
+  width: 72%;
   text-align: center;
 }
 
 .aside-player, .aside-computer {
-  width: 20%;
+  width: 14%;
   padding: 2rem;
-  background: lightblue;
+  background: green;
   height: 100vh;
-  box-shadow: inset -.75em -1em 1em rgb(63, 63, 129);
-}
-
-.aside-computer {
-  box-shadow: inset .75em -1em 1em rgb(63, 63, 129);
 }
 
 button {
@@ -41,7 +36,7 @@ button {
 
 .math-problem-card {
   border: lightblue 1px solid;
-  padding: 8rem;
+  padding: 3rem;
   box-shadow: 5px 5px 5px lightblue;
 }
 
