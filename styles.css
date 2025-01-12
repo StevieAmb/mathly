@@ -14,9 +14,8 @@ main {
 .aside-player, .aside-computer {
   width: 20%;
   padding: 2rem;
-  background: lightblue;
+  background: green;
   height: 100vh;
-  box-shadow: inset -.75em -1em 1em rgb(63, 63, 129);
 }
 
 .aside-computer {
